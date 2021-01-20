@@ -1,0 +1,20 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(MathFunctionsImplTest, org.scalatest.tools.Framework$$anon$1@560ea0f, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(PasswordTest, org.scalatest.tools.Framework$$anon$1@560ea0f, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mPasswordTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Should return true as Hello@123 is valid[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mMathFunctionsImplTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Should return true as 121 is palindrome[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Should return true as 1 is palindrome[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Should return true as 0 is palindrome[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Should not return true as negative numbers are not palindromes[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Factorial of 0 should be 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Factorial of a negative number is not defined, hence return -1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Factorial of 1 should be 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 1 second, 507 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 8[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 2, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 8, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PasswordTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MathFunctionsImplTest[0m
