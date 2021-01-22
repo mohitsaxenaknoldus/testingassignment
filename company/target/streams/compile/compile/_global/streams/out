@@ -1,7 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\mohit\Desktop\Knoldus\testingassignment\company\src\main\scala\com\knoldus\request\CompanyImpl.scala:6:37: not found: type CompanyValidator[0m
-[0m[[0m[31merror[0m] [0m[0mclass CompanyImpl(companyValidator: CompanyValidator) {[0m
-[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\mohit\Desktop\Knoldus\testingassignment\company\src\main\scala\com\knoldus\request\EmployeeImpl.scala:6:39: not found: type EmployeeValidator[0m
-[0m[[0m[31merror[0m] [0m[0mclass EmployeeImpl(employeeValidator: EmployeeValidator) {[0m
-[0m[[0m[31merror[0m] [0m[0m                                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
