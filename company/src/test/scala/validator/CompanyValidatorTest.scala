@@ -9,7 +9,9 @@ class CompanyValidatorTest extends FunSuite {
   val companyValidatorObject = new CompanyValidator()
   val companyReadDtoObject = new CompanyReadDto()
 
-  test("Should return true if company is valid"){
+  val mockCompanyValidator = new CompanyValidator()
+
+  test("Should return true as Knoldus is valid"){
     assert(!companyValidatorObject.companyIsValid(companyReadDtoObject.knoldusCompany) === true)
   }
 }
