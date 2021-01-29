@@ -3,7 +3,7 @@ package com.knoldus.validator
 import com.knoldus.db.CompanyReadDto
 import com.knoldus.models.Employee
 
-class EmployeeValidator{
+class EmployeeValidator(){
 
   val emailValidatorObject = new EmailValidator()
   val companyReadDtoObject = new CompanyReadDto()
