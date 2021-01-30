@@ -1,21 +1,27 @@
 package request
 
-import com.knoldus.db.EmployeeReadDto
 import com.knoldus.request.EmployeeImpl
 import com.knoldus.validator.EmployeeValidator
+import com.knoldus.models.Employee
 import org.scalatest.FunSuite
+import org.mockito.Mockito._
+import org.scalatest.mock.MockitoSugar
 
-class EmployeeImplTest extends FunSuite {
+class EmployeeImplTest extends FunSuite with MockitoSugar{
 
-  val employeeValidatorObj = new EmployeeValidator()
-  val employeeImplObj = new EmployeeImpl(employeeValidatorObj)
-  val employeeReadDtoObj = new EmployeeReadDto()
+  val mockEmployeeValidator = mock[EmployeeValidator]
+  val employeeImplObj = new EmployeeImpl(mockEmployeeValidator)
 
-  test("Should return Some if Employee One is created"){
-    assert(employeeImplObj.createEmployee(employeeReadDtoObj.employeeOne) != None)
+  val testEmployeeOne = new Employee("Virat", "Kohli", 29, 60000, "Engineer", "Knoldus", "virat@bcci.com")
+  val testEmployeeTwo = new Employee("Rohit", "Sharma", 28, 65000, "Engineer", "BCCI", "rohitbcci.com")
+
+  test("Should return Some if testEmployeeOne is created"){
+    when(mockEmployeeValidator.employeeIsValid(testEmployeeOne)).thenReturn(true)
+    assert(employeeImplObj.createEmployee(testEmployeeOne) != None)
   }
 
-  test("Should return Some if Employee Two is created"){
-    assert(employeeImplObj.createEmployee(employeeReadDtoObj.employeeTwo) != None)
+  test("Should return None if testEmployeeTwo is not created"){
+    when(mockEmployeeValidator.employeeIsValid(testEmployeeTwo)).thenReturn(false)
+    assert(employeeImplObj.createEmployee(testEmployeeTwo) === None)
   }
 }

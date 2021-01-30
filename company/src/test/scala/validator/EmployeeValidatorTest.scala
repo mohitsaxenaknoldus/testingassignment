@@ -1,25 +1,21 @@
 package validator
 
-import com.knoldus.db.EmployeeReadDto
-import com.knoldus.request.EmployeeImpl
+import com.knoldus.models.Employee
 import com.knoldus.validator.EmployeeValidator
 import org.scalatest.FunSuite
-import org.mockito.Mockito._
-import org.scalatest.mock.MockitoSugar
 
-class EmployeeValidatorTest extends FunSuite with MockitoSugar{
+class EmployeeValidatorTest extends FunSuite {
 
-  val mockEmployeeValidator = mock[EmployeeValidator]
-  val employeeImplObj = new EmployeeImpl(mockEmployeeValidator)
-  val employeeReadDtoObject = new EmployeeReadDto()
+  val employeeValidatorObject = new EmployeeValidator()
 
-  test("Should return true as employee one is valid"){
-    when(mockEmployeeValidator.employeeIsValid(employeeReadDtoObject.employeeOne)).thenReturn(true)
-    assert(employeeImplObj.createEmployee(employeeReadDtoObject.employeeOne) != None)
+  val testEmployeeOne = new Employee("Ravi", "Kumar", 45, 45000, "CEO", "Knoldus", "ravikumar@gmail.com")
+  val testEmployeeTwo = new Employee("Soni", "Singh", 40, 40000, "CTO", "Samsung", "sonisingh@yahoo.com")
+
+  test("Should return true as testEmployeeOne is valid"){
+    assert(employeeValidatorObject.employeeIsValid(testEmployeeOne) === true)
   }
 
-  test("Should return true as employee two is valid"){
-    when(mockEmployeeValidator.employeeIsValid(employeeReadDtoObject.employeeTwo)).thenReturn(true)
-    assert(employeeImplObj.createEmployee(employeeReadDtoObject.employeeTwo) != None)
+  test("Should return true as testEmployeeTwo is not valid"){
+    assert(!employeeValidatorObject.employeeIsValid(testEmployeeTwo) === true)
   }
 }

@@ -1,25 +1,21 @@
 package validator
 
-import com.knoldus.db.UserReadDto
-import com.knoldus.request.UserImpl
 import com.knoldus.validator.UserValidator
+import com.knoldus.models.User
 import org.scalatest.FunSuite
-import org.mockito.Mockito._
-import org.scalatest.mock.MockitoSugar
 
-class UserValidatorTest extends FunSuite with MockitoSugar{
+class UserValidatorTest extends FunSuite {
 
-  val mockUserValidator = mock[UserValidator]
-  val userImplObj = new UserImpl(mockUserValidator)
-  val userReadDtoObject = new UserReadDto()
+  val userValidatorObject = new UserValidator()
 
-  test("Should return true as user one is valid"){
-    when(mockUserValidator.userIsValid(userReadDtoObject.userOne)).thenReturn(true)
-    assert(userImplObj.createUser(userReadDtoObject.userOne) != None)
+  val testUserOne = new User("Virat", "Kohli", 29, "Knoldus", "viratkohli@gmail.com")
+  val testUserTwo = new User("Rohit", "Sharma", 28, "Samsung", "rohitsharma@yahoo.in")
+
+  test("Should return true as testUserOne is valid"){
+    assert(userValidatorObject.userIsValid(testUserOne) === true)
   }
 
-  test("Should return true as user two is valid"){
-    when(mockUserValidator.userIsValid(userReadDtoObject.userTwo)).thenReturn(true)
-    assert(userImplObj.createUser(userReadDtoObject.userTwo) != None)
+  test("Should return true as testUserTwo is not valid"){
+    assert(!userValidatorObject.userIsValid(testUserTwo) === true)
   }
 }
